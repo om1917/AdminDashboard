@@ -78,8 +78,8 @@ export const CompanyList = () => {
           fixed="right"
           render={(value, company) => {
             <Space>
-               <EditButton />
-               <DeleteButton />
+               {/* <EditButton />
+               <DeleteButton /> */}
             </Space>
           }}
         />
