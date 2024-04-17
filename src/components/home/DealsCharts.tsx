@@ -19,25 +19,22 @@ const DealsCharts = () => {
 
     const dealsData = React.useMemo(() => {
         return mapDealsData(data?.data);
-    }, [data?.data])
+    }, [data?.data]);
 
+    console.log(dealsData)
+    
     const config: AreaConfig = {
         data: dealsData,
         xField: 'timeText',
-        yField: 'value',       
+        yField: 'value',   
         seriesField: 'state',
-        stack: false,
-        legend:{
-            offsetY: -6
+        shape: 'smooth',
+        areaStyle: { fillOpacity: 0.6 },
+        yAxis: {
+            label: {
+              formatter: (v: number) => `$${Number(v) /1000}K`, // Convert value to thousands and append 'K'
+            },
         },
-        // yAxis: {
-        //     tickCount: 4,
-        //     label: {
-        //         formatter: (v:string) => {
-        //             return `$${Number(v)/1000}K`
-        //         }
-        //     }
-        // }
     }
 
 
